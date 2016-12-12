@@ -1,0 +1,294 @@
+
+/*Index.html*/
+#scale
+{
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    z-index:-999;
+}
+
+
+#sc
+{
+    width:20%;
+    height:20%;
+}
+.container .credit {
+    margin: 20px 0;
+    color:white;
+    font-size: medium;
+    border-top: 2px solid white;
+}
+
+@media (min-width: 2px) and (max-width: 450px) {
+    #myh1 {
+        width: 25%;
+        height: 10%;
+        position: fixed;
+        bottom: 8%; left: 37%;
+
+
+
+    }
+}
+@media (min-width: 451px) and (max-width: 700px) {
+    #myh1 {
+        width: 25%;
+        height: 10%;
+        position: fixed;
+        bottom: 9%; left: 37%;
+
+    }
+}
+@media (min-width: 701px) and (max-width: 1080px)  {
+    #myh1 {
+        width: 20%;
+        height: 10%;
+        position: fixed;
+        bottom: 10%; left: 37%;
+
+
+    }
+
+}
+@media (min-width: 1081px) and (max-width: 2000px)  {
+    #myh1 {
+        width: 14%;
+        height: 8%;
+        position: fixed;
+        bottom: 9%; left: 37%;
+		border-radius:10px;
+		background-color: red;
+		font-family: Century Gothic, sans-serif;
+        font-size: 2.0em;
+		color:#fff;
+
+
+    }
+
+}
+@media (min-width: 1081px) and (max-width: 2000px)  {
+    #myh10 {
+        width: 14%;
+        height: 8%;
+        position: fixed;
+        bottom: 9%; left: 17%;
+		border-radius:10px;
+		background-color: red;
+		font-family: Century Gothic, sans-serif;
+        font-size: 2.0em;
+		color:#fff;
+
+
+
+    }
+
+}
+
+@media (min-width: 2px) and (max-width: 450px) {
+    #myh2 {
+        color: #fd0401;
+        width: 35%;
+        height: 35%;
+
+        margin:10px;
+
+    }
+}
+@media (min-width: 451px) and (max-width: 700px) {
+    #myh2 {
+        color: #fd0401;
+        width: 36%;
+        height: 36%;
+        text-align: left;
+        margin:10px;
+
+    }
+}
+@media (min-width: 701px) and (max-width: 1080px)  {
+    #myh2 {
+        color: #fd0401;
+        width: 37%;
+        height: 37%;
+        margin:10px;
+
+
+    }
+
+}
+@media (min-width: 1081px) and (max-width: 2000px)  {
+    #myh2 {
+        color: #fd0401;
+        width: auto;
+        height: auto;
+        margin:10px;
+
+
+    }
+
+}
+
+/*Singup.html*/
+.back
+{
+    background:url("../resource/back.jpg")  center center fixed;
+    margin:0px;
+    background-repeat: no-repeat;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, a {
+    margin:0; padding:0;
+}
+.login {
+    margin:0 auto;
+    max-width:500px;
+}
+
+
+.login-form {
+    border:2px solid #999;
+    background:#fffaeb;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #000;
+
+}
+.login-form h3 {
+    text-align:left;
+    margin-left:40px;
+    color:black;
+}
+.login-form {
+    box-sizing:border-box;
+    padding-top:15px;
+    margin:50px auto;
+    text-align:center;
+    overflow: hidden;
+}
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    max-width:400px;
+    height:30px;
+    font-family: 'Ubuntu', sans-serif;
+    margin:10px 0;
+    border-radius:5px;
+    border:2px solid rgba(73, 75, 69, 0.67);
+    outline:none;
+    padding-left:10px;
+}
+.login-form input[type="button"] {
+    height:30px;
+    width:100px;
+    background:#fff;
+    border:1px solid rgba(73, 75, 69, 0.67);
+    border-radius:20px;
+    color: black;
+    text-transform:uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    cursor:pointer;
+}
+.sign-up{
+    color:black;
+    margin-left:-400px;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.no-access {
+    color:#E86850;
+    margin:20px 0px 20px -300px;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+@media only screen and (min-width : 150px) and (max-width : 530px){
+    .login-form h3 {
+        text-align:center;
+        margin:0;
+        font-size:15px;
+    }
+    .sign-up, .no-access {
+        margin:10px 0;
+    }
+    .login-button {
+        margin-bottom:10px;
+    }
+}
+#scale1
+{
+    height:100%;
+    width:100%;
+}
+
+
+#poster2
+{
+    padding:10px;
+    margin-top:10px;
+}
+.container .credit {
+    margin: 20px 0;
+    color:black;
+    font-size: medium;
+    border-top: 2px solid black;
+}
+.id{
+    color:  black;
+    font-size: xx-large;
+    background-color: #fffaeb;
+    opacity: 0.8;
+
+
+}
+
+/*dashboard.html*/
+.background {
+    background:url('http://wallpaperscraft.com/wallpaper/background_tapes_radiation_hazard_wall_18526');
+    margin:0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, a {
+    margin:0; padding:0;
+}
+
+
+.box
+{
+    border: 1px solid black;
+    background-color:black;
+    box-shadow:0px 0px 10px #494b45;
+    color:white;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+#poster2
+{
+    padding:10px;
+    margin-top:10px;
+}
+.container .credit {
+    margin: 20px 0;
+    color:black;
+    font-size: medium;
+    border-top: 2px solid black;
+}
+/*other pages*/
+.portfolio-item {
+    margin-bottom: 25px;
+
+}
+
+div.col-sm-3.portfolio-item >h3 a
+{
+    color:black;
+}
+
+div.col-lg-12 >h1 small
+{
+color:black;
+    opacity: 0.6;
+}
