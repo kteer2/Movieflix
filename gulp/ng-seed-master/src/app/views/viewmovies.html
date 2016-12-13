@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+<nav class="clearfix">
+  <ul>
+
+    <li><a ng-click="mVm.goToMain()"  class="navbar-brand">Home</a></li>
+    <li><a ng-click="mVm.goToHome()" class="navbar-brand">Log Out</a></li>
+
+  </ul>
+</nav>
+<div  class="row" ng-repeat="movie in  mVm.movies">
+  <mf-tile method-name="mVm.calledByDirective(data)" name="{{mVm.Title}}" movie="movie">
+
+    This is the best movie ever!! {{mVm.profile}}
+
+  </mf-tile>
+  <a ng-click="mVm.goToDetails()" >{{movie.Title}}</a>
+  <img ng-src="{{movie.Poster}}">
+</div>
+
+
+</body>
+
+</html>

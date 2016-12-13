@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+  <script src="app.js"></script>
+  <script src="viewmovies-ctrl.js"></script>
+</head>
+
+<body>
+<nav class="clearfix">
+  <ul>
+
+    <li>
+    <li><a ng-click="moviedtlsctrl.goToMain()" class="navbar-brand">Home</a></li>
+    <li><a ng-click="moviedtlsctrl.goToHome()" class="navbar-brand ">Log Out</a></li>
+
+  </ul>
+</nav>
+<p>new ,nfgnfk</p>
+
+<div class="row " ng-repeat="p in moviedtlsctrl.movie ">
+
+  new movie
+  {{p.Title}} {{p.Year}} {{p.Rated}} {{p.Released}} {{p.Runtime}} {{p.Genre}} {{p.Director}} {{p.Writer}} {{p.Actors}} {{p.Plot}} {{p.Language}} {{p.Country}} {{p.Awards}} {{p.Poster}} {{p.Metascore}} {{p.imdbRating}} {{p.imdbVotes}} {{p.imdbID}}
+  {{p.Type}}
+
+</div>
+
+
+</body>
+
+</html>

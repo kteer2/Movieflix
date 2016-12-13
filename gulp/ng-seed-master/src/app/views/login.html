@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.angularjs.org/1.3.8/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.3.8/angular-messages.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body><!-- ng-controller="MainCtrl as mctrl">-->
+<div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <h1>Login</h1>
+    </div>
+
+    <!-- FORM -->
+    <!-- pass in the variable if our form is valid or invalid -->
+    <form name="userForm" novalidate>
+      <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
+
+
+      <!-- EMAIL -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && userForm.email.$dirty }">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" ng-model="user.email" required>
+        <div ng-messages="userForm.email.$error" ng-if='userForm.email.$dirty'>
+          <p class="help-block" ng-message="required">Email is required</p>
+          <p class="help-block" ng-message="email">Enter a valid email</p>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.zip.$invalid && userForm.zip.$dirty }">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" ng-model="user.password" required ng-pattern="/^[0-9]{5}$/">
+        <div ng-messages="userForm.zip.$error" ng-if='userForm.zip.$dirty'>
+          <p class="help-block" ng-message="required">password is required</p>
+          <p class="help-block" ng-message="pattern">Enter a valid password</p>
+        </div>
+      </div>
+
+
+
+      <!-- SUBMIT BUTTON -->
+      <button ng-click="lctrl.goToHome()" type="submit" class="btn btn-primary">Login</button>
+      <button ng-click="lctrl.goToAdmin()" type="submit" class="btn btn-primary">AdminLogin</button>
+
+    </form>
+
+  </div>
+  <!-- col-sm-8 -->
+</div>
+<!-- /container -->
+</body>
+
+</html>
