@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div ng-include src="'src/header/header.view.html'"></div>
+  <div>
+    <label class="" for="Genre-sort">Series</label>
+    <select class="form-control" ng-model="u.Type" id="Genre-sort" name="sort">
+
+      <option value="series">series</option>
+
+    </select>
+  </div>
+  <br>
+
+  <div class = "right">
+    <ul uib-pagination boundary-links="true" total-items="vm.users.length" ng-model="currentPage" items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+  </div>
+  <div class="container">
+
+
+    <div class="col-sm-3" ng-repeat="u in vm.users.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) |filter:u.Type">
+
+      <div class="thumbnail">
+        <!-- Trigger the modal with a button -->
+        <button class="thumbnail" style="background-color:orangered;" type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">{{u.Title}}</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" >{{u.Title}}
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+              </div>
+              <div class="modal-body">
+                <div>Year :{{u.Year}}</div>
+                <div>Rated : {{u.Rated}}</div>
+                <div>Released : {{u.Released}} </div>
+                <div>Runtime : {{u.Runtime}} </div>
+                <div>Genre : {{u.Genre}} </div>
+                <div>Director : {{u.Director}}</div>
+                <div>Writer : {{u.Writer}} </div>
+                <div>Actors : {{u.Actors}} </div>
+                <div>Plot : {{u.Plot}} </div>
+                <div>Language : {{u.Language}} </div>
+                <div>Country : {{u.Country}}</div>
+                <div>Awards : {{u.Awards}}</div>
+                <a href = "http://www.imdb.com/">imdb details:  {{u.imdbID}}</a>
+                <div>Type : {{u.Type}}</div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--model end-->
+
+        <img class="thumbnail" style="background-color:orangered;" type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal"ng-src="{{u.Poster}}">
+
+
+        <!-- Modal -->
+        <!-- <img class="thumbnail" class="container" ng-src="{{u.Poster}}">-->
+        <div><a href = "src/reviews/reviews.html">view ratings and reviews  >>></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--m footer-->
+<div class="container">
+  <div class="col-sm-12">
+    <div class="row">
+      <div id="footer">
+        <p class="text-muted credit">MovieFlix. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--m footer end-->
+</div>
+</body>
+</html>
+
+
