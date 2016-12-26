@@ -13,8 +13,10 @@
 
       var config = {
         method: 'GET',
-         url: 'http://localhost:2021/movieflix-0.0.1/api/titles'
-       // url: 'src/moviesview/jsonfiles.html'
+        // uncomment this url if using backend services
+        
+        // url: 'http://localhost:2021/movieflix-0.0.1/api/titles'
+        url: 'src/moviesview/jsonfiles.html'
       }
 
 
