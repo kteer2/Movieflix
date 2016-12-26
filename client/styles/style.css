@@ -1,0 +1,66 @@
+html {
+  height: 100%;
+  margin: 0;
+  /*background-color: darkslategray;*/
+}
+/*html,ng-view,body, #main {
+    background-image: radial-gradient(red, #f06d06);
+}*/
+body {
+  /*background: url("../Images/hulu.jpg");*/
+  background-image: radial-gradient(white, orangered);
+  /* background-color: darkslategray;*/
+}
+.container
+{
+  width: auto;
+  height: auto;
+  /* background-color: darkslategray;*/
+}
+
+#myimg{
+  height: 280px;
+}
+#reviews{
+  position: center;
+  text-align: center;
+}
+#myh2{
+  width: 400px;
+}
+#mvetitle{
+  height:40px;
+  width: 220px;
+  background-color:orangered;
+
+
+}
+#sort{
+
+  width: 40%;
+  nav-left:auto;
+  align-items: center;
+
+}
+#footer{
+  position: center;
+  text-align: center;
+  font-size: medium;
+  text-decoration-color: orangered;
+
+}
+#imgstyle{
+  height:350px;
+  weight: 300px;
+}
+
+#screen, #subscreen{
+  width : auto;
+}
+#mve{
+  height: 400px;
+}
+#imgstyle, #mve {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -36,33 +36,6 @@
 
 
 
-    // file 2
-
-    angular.module('app')
-        .service('MovieService', MovieService);
-
-
-    MovieService.$inject = ['$http'];
-
-    function MovieService($http) {
-
-        this.getUsers = function() {
-
-            var config = {
-                method: 'GET',
-                url: 'src/moviesview/jsonfiles.html'
-            }
-
-            return $http(config)
-                .then(function(resp) {
-                    return resp.data;
-                }, function(err) {
-                    console.log(err)
-                    return err;
-                });
-        }
-
-    }
 
 
 

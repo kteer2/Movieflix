@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div ng-include src="'src/header/header.view.html'"></div>
+
+  <ui>
+    <div id="sort" class="form-group">
+        <label class="" for="Genre-sort">Filter by Genre | Type | Year</label>
+        <select class="form-control" ng-model="u.Genre" id="Genre-sort" name="sort">
+          <option value="">select</option>
+          <option value="Action">Action</option>
+          <option value="	Animation">	Animation</option>
+          <option value="Biography">Biography</option>
+          <option value="Drama">Drama</option>
+          <option value="Documentary">Documentary</option>
+          <option value="History">History</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Thriller">	Thriller</option>
+          <option value="Romance">Romance</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Horror">Horror</option>
+          <option value="movie">movie</option>
+          <option value="series">series</option>
+          <option value="Year">Year</option>
+        </select>
+
+        <!--
+            <label for="sorting"> sortby</label>
+            <select class="form-control" ng-model="u.imdbRating" id="sorting" name="sorting">
+              <option value="imdbRating">Imdb Ratings</option>
+              <option value="imdbVotes">Imdb votes</option>
+            </select>
+
+        -->
+
+
+        <ul class="right" uib-pagination boundary-links="true" total-items="vm.users.length" ng-model="currentPage" items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+
+      </div>
+    </ui>
+
+
+    <div class="col-sm-3" ng-repeat="u in vm.users.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) |filter:u.imdbVotes |filter:u.imdbRating |filter:u.Type | filter: u.Year |filter: u.Genre">
+
+      <div id="mve" class="thumbnail">
+        <!-- Trigger the modal with a button -->
+        <div class="container">
+          <button  id="mvetitle" class="thumbnail" type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">{{u.Title}}</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" >{{u.Title}}
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+              </div>
+              <div class="modal-body">
+                <div>Year :{{u.Year}}</div>
+                <div>Rated : {{u.Rated}}</div>
+                <div>Released : {{u.Released}} </div>
+                <div>Runtime : {{u.Runtime}} </div>
+                <div>Genre : {{u.Genre}} </div>
+                <div>Director : {{u.Director}}</div>
+                <div>Writer : {{u.Writer}} </div>
+                <div>Actors : {{u.Actors}} </div>
+                <div>Plot : {{u.Plot}} </div>
+                <div>Language : {{u.Language}} </div>
+                <div>Country : {{u.Country}}</div>
+                <div>Awards : {{u.Awards}}</div>
+                <a href = "http://www.imdb.com/">imdb details:  {{u.imdbID}}</a>
+                <div>Type : {{u.Type}}</div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--model end-->
+
+        <!--
+        <img class="thumbnail" id="imgstyle" style="background-color:orangered;" type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal"ng-src="{{u.Poster}}">
+
+-->
+        <!-- Modal -->
+        <a href = "#!/moviedetails{{u.Title}}"> <img id="myimg" class="thumbnail" class="container" ng-src="{{u.Poster}}"></a>
+        <div id="reviews"><a href = "#!/reviews">view ratings and reviews  >>></a></div>
+      </div>
+    </div>
+
+</div>
+<!--m footer-->
+<div class="container">
+  <div class="col-sm-12">
+    <div class="row">
+      <div id="footer">
+        <p class="text-muted credit">MovieFlix. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--m footer end-->
+</div>
+</body>
+</html>
+
+

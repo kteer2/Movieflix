@@ -5,19 +5,7 @@
    </head>
   <div ng-include src="'src/header/header.view.html'"></div>
 
-<div ng-app="app" ng-controller="RatingController as rating" class="container">
 
-  <div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div>
-  <star-rating ng-model="rating.rating2" readonly="rating.isReadonly"></star-rating>
-  <label>
-    <input type="checkbox" ng-model="rating.isReadonly"/>
-
-  </label>
-
-  <div><strong>Rating 1:</strong> {{rating.rating1}}</div>
-  <div><strong>Rating 2:</strong> {{rating.rating2}}</div>
-</div>
-{{u.Title}}
 
   <img ng-src="{{vm.users.Poster}}">
 <!-- begin htmlcommentbox.com -->
