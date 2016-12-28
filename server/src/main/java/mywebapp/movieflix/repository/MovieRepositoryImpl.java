@@ -54,6 +54,13 @@ public class MovieRepositoryImpl implements MovieRepository{
 	}
 
 	@Override
+	public List<MovieEntity> showById(String id) {
+		TypedQuery<MovieEntity> query = em.createNamedQuery("MovieEntity.findTitlesById",MovieEntity.class); 
+		query.setParameter("mId", id);
+		return query.getResultList();
+	}
+	
+	@Override
 	public List<MovieEntity> showMovieByImdbId(String imdbid) {
 		TypedQuery<MovieEntity> query = em.createNamedQuery("MovieEntity.findTitlesByimdbID",MovieEntity.class); 
 		query.setParameter("mImdbid", imdbid);

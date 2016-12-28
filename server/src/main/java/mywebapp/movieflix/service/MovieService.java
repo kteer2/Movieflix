@@ -10,6 +10,8 @@ public interface MovieService {
 	
 	public List<MovieEntity> showByYear(String year);
 	
+	public List<MovieEntity> showById(String id);
+	
 	public List<MovieEntity> showMovieByImdbId(String imdbid);
 	
 	public List<MovieEntity> showByTitle(String title);

@@ -45,4 +45,16 @@ public class UserRepositoryImpl implements UserRepository {
 		em.remove(user);
 	}
 
+	@Override
+	public User findUserByUsername(String username) {
+		TypedQuery<User> query = em.createNamedQuery("User.findByUsername", User.class);
+		query.setParameter("pUsername", username);
+		List<User> users = query.getResultList();
+		if (users!=null && users.size() == 1) {
+			return users.get(0);
+		} else {
+			return null;
+		}
+	}
+
 }

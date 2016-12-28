@@ -5,14 +5,16 @@ import java.util.List;
 import mywebapp.movieflix.entities.User;
 
 public interface UserRepository {
+	
+	User findUserByUsername(String username);
 
-	public List<User> showAllUsers();
+	 List<User> showAllUsers();
 	
-	public User showOneUser(String uid);
+	 User showOneUser(String uid);
 	
-	public User createUser(User user);
+	 User createUser(User user);
 	
-	public User updateUser(User user);
+	 User updateUser(User user);
 	
-	public void deleteUser(User user);
+	 void deleteUser(User user);
 }

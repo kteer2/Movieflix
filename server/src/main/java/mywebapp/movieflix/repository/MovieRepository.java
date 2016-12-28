@@ -14,6 +14,8 @@ public List<MovieEntity> showAllMovies();
 	
 	public List<MovieEntity> showByYear(String year);
 	
+	public List<MovieEntity> showById(String id);
+	
 	public List<MovieEntity> showMovieByImdbId(String imdbid);
 	
 	public List<MovieEntity> showByGenre(String genre);

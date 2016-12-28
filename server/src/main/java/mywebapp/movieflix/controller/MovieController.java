@@ -27,6 +27,11 @@ public class MovieController {
 		return service.showByYear(year);
 	}
 	
+	@RequestMapping(method=RequestMethod.GET,value="/movies/id/{id}")
+	public List<MovieEntity> showMovieById(@PathVariable("id") String id){
+		return service.showById(id);
+	}
+	
 	@RequestMapping(method=RequestMethod.GET,value="/movies/imdbid/{imdbid}")
 	public List<MovieEntity> showMovieByImdbId(@PathVariable("imdbid") String imdbid){
 		return service.showMovieByImdbId(imdbid);

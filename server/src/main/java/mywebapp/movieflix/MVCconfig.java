@@ -9,9 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan
 @EnableWebMvc
 public class MVCconfig extends WebMvcConfigurerAdapter{
-
+   
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
+		System.out.println("hi welcomekari");
 				registry.addMapping("/**")
 		.allowedOrigins("*").allowedMethods("GET", "POST", "OPTIONS", "PUT","DELETE")
         .allowedHeaders("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",

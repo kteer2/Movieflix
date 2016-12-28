@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @NamedQueries({
 	@NamedQuery(name="MovieEntity.findAll", query="select m from MovieEntity m"),
 	@NamedQuery(name="MovieEntity.findTitlesByYear",query="select m from MovieEntity m where m.year=:mYear"),
+	@NamedQuery(name="MovieEntity.findTitlesById",query="select m from MovieEntity m where m.id=:mId"),
 	@NamedQuery(name="MovieEntity.findTitlesByimdbID",query="select m from MovieEntity m where m.imdbid=:mImdbid"),
 	@NamedQuery(name="MovieEntity.findTitlesByGenre",query="select m from MovieEntity m where m.genre LIKE :mGenre"),
 	@NamedQuery(name="MovieEntity.findTitlesByTitle",query="select m from MovieEntity m where m.title LIKE :mTitle"),

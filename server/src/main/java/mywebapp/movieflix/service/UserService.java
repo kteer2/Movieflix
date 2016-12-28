@@ -5,6 +5,8 @@ import java.util.List;
 import mywebapp.movieflix.entities.User;
 
 public interface UserService {
+	
+	User findUserByUsername(String username);
    
 	public List<User> showAllUsers();
 	

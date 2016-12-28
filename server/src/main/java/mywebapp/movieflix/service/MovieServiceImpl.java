@@ -79,6 +79,15 @@ public class MovieServiceImpl implements MovieService{
 	}
 	
 	@Override
+	public List<MovieEntity> showById(String id) {
+		List<MovieEntity> movieEntities = repository.showById(id);
+		if (movieEntities.isEmpty()) {
+			throw new ResourceNotFoundException("Sorry no movies found");
+		}
+		return movieEntities;
+	}
+	
+	@Override
 	public List<MovieEntity> showMovieByImdbId(String imdbid) {
 		List<MovieEntity> movieEntities = repository.showMovieByImdbId(imdbid);
 		if (movieEntities.isEmpty()) {

@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @Table
 @EnableTransactionManagement
 @NamedQueries({
-	@NamedQuery(name="User.findAll", query="select u from User u")
+	@NamedQuery(name="User.findAll", query="select u from User u"),
+	@NamedQuery(name = "User.findByUsername", query = "SELECT u from User u where u.email=:pUsername")
 })
 public class User {
 	@Id
