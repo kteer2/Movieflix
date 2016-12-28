@@ -1,0 +1,11 @@
+<div class="inside the dir">
+
+  <input ng-model="movie.Title" />
+
+  <span ng-repeat="Title in movie.Title">{{Title}} </span>
+
+  <button ng-click="methodName({ data: movie.Title})">View</button>
+  <!--<button ng-click="methodName({ data: movie.Title})">AddMovie</button>-->
+  <button ng-click="methodName({ data: movie.Title})">DeleteMovie</button>
+  <button ng-click="methodName({ data: movie.Title})">EditMovie</button>
+</div>
