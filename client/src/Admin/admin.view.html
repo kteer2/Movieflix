@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div ng-include src="'src/header/header.view.html'"></div>
+
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search movies" ng-model="searchFish">
+    </div>
+</div>
+<form ng-submit="addNew()">
+  <div class="form-group">
+    <input type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove">
+    <input type="submit" class="btn btn-primary"  value="Add New">
+  </div>
+<table>
+    <thead>
+    <tr>
+        <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th>
+        <td>
+            <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+                Title
+                <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+        <td>
+            <a ng-click="sortType = 'Type'; sortReverse = !sortReverse">
+                Type
+                <span ng-show="sortType == 'Type' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Type' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+        <td>
+            <a ng-click="sortType = 'Year'; sortReverse = !sortReverse">
+                Year
+                <span ng-show="sortType == 'Year' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Year' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+
+   <!--   <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+          Rated
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+          Released
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+         Runtime
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>-->
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+          Genre
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+    <!--  <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+         Directors
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+          Writers
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+          Actors
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>-->
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+         Language
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+      <td>
+        <a ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+          imdbRating
+          <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </td>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="p in vm.users | orderBy:sortType:sortReverse | filter:searchFish">
+
+        <td><input type="checkbox" ng-model="p.selected"/></td>
+        <td><input type="text" class="form-control" ng-model="p.Title"/></td>
+        <td><input type="text" class="form-control" ng-model="p.Type"/></td>
+        <td><input type="text" class="form-control" ng-model="p.Year"/></td>
+     <!-- <td><input type="text" class="form-control" ng-model="p.Rated"/></td>
+      <td><input type="text" class="form-control" ng-model="p.Released"/></td>
+      <td><input type="text" class="form-control" ng-model="p.Runtime"/></td>-->
+      <td><input type="text" class="form-control" ng-model="p.Genre"/></td>
+      <!--<td><input type="text" class="form-control" ng-model="p.Director"/></td>
+      <td><input type="text" class="form-control" ng-model="p.Writer"/></td>
+      <td><input type="text" class="form-control" ng-model="p.Actors"/></td>-->
+      <td><input type="text" class="form-control" ng-model="p.Language"/></td>
+      <td><input type="text" class="form-control" ng-model="p.imdbRating"/></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+</form>
+</body>
+
+</html>
